@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "430423205878",
+    "project_id": "pmpl4-d53cf",
+    "storage_bucket": "pmpl4-d53cf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430423205878:android:1966be710ebb5dd75d49d7",
+        "android_client_info": {
+          "package_name": "com.example.pmp_003"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKlLiPjSnmFZwkptdfgp-LgTNem3yciug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
