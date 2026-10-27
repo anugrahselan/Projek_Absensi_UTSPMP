@@ -41,44 +41,44 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAxctN7i7wAYiXop7RhjNOt2acdNWScQmI',
-    appId: '1:430423205878:web:0faf781a99763ff95d49d7',
-    messagingSenderId: '430423205878',
-    projectId: 'pmpl4-d53cf',
-    authDomain: 'pmpl4-d53cf.firebaseapp.com',
-    storageBucket: 'pmpl4-d53cf.firebasestorage.app',
+    apiKey: 'AIzaSyA_rHyNeDhgJJAblSlDe_WPi-nfuhHEJgE',
+    appId: '1:102504037022:web:6bcc7eb1982e434542598f',
+    messagingSenderId: '102504037022',
+    projectId: 'absensiprojek',
+    authDomain: 'absensiprojek.firebaseapp.com',
+    storageBucket: 'absensiprojek.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBKlLiPjSnmFZwkptdfgp-LgTNem3yciug',
-    appId: '1:430423205878:android:1966be710ebb5dd75d49d7',
-    messagingSenderId: '430423205878',
-    projectId: 'pmpl4-d53cf',
-    storageBucket: 'pmpl4-d53cf.firebasestorage.app',
+    apiKey: 'AIzaSyCsaLHaOH5cau_c87sSKgzRyoYZkCVty7s',
+    appId: '1:102504037022:android:ff78d30b2be61af442598f',
+    messagingSenderId: '102504037022',
+    projectId: 'absensiprojek',
+    storageBucket: 'absensiprojek.firebasestorage.app',
   );
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD5_wr1BKHZBfrf1DPhxedjEfe263umO0s',
-    appId: '1:430423205878:ios:4ce7fc8acb72ccde5d49d7',
-    messagingSenderId: '430423205878',
-    projectId: 'pmpl4-d53cf',
-    storageBucket: 'pmpl4-d53cf.firebasestorage.app',
+    apiKey: 'AIzaSyAcW1CNeJqfCUZjp9Qw1nIQgccnOw7ExwA',
+    appId: '1:102504037022:ios:0a9ff8b86df6409942598f',
+    messagingSenderId: '102504037022',
+    projectId: 'absensiprojek',
+    storageBucket: 'absensiprojek.firebasestorage.app',
     iosBundleId: 'com.example.pmp003',
   );
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD5_wr1BKHZBfrf1DPhxedjEfe263umO0s',
-    appId: '1:430423205878:ios:4ce7fc8acb72ccde5d49d7',
-    messagingSenderId: '430423205878',
-    projectId: 'pmpl4-d53cf',
-    storageBucket: 'pmpl4-d53cf.firebasestorage.app',
+    apiKey: 'AIzaSyAcW1CNeJqfCUZjp9Qw1nIQgccnOw7ExwA',
+    appId: '1:102504037022:ios:0a9ff8b86df6409942598f',
+    messagingSenderId: '102504037022',
+    projectId: 'absensiprojek',
+    storageBucket: 'absensiprojek.firebasestorage.app',
     iosBundleId: 'com.example.pmp003',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAxctN7i7wAYiXop7RhjNOt2acdNWScQmI',
-    appId: '1:430423205878:web:bc3c05d29df3dbc95d49d7',
-    messagingSenderId: '430423205878',
-    projectId: 'pmpl4-d53cf',
-    authDomain: 'pmpl4-d53cf.firebaseapp.com',
-    storageBucket: 'pmpl4-d53cf.firebasestorage.app',
+    apiKey: 'AIzaSyA_rHyNeDhgJJAblSlDe_WPi-nfuhHEJgE',
+    appId: '1:102504037022:web:04ff0ded7325c9d442598f',
+    messagingSenderId: '102504037022',
+    projectId: 'absensiprojek',
+    authDomain: 'absensiprojek.firebaseapp.com',
+    storageBucket: 'absensiprojek.firebasestorage.app',
   );
 }

@@ -15,11 +15,26 @@ class UserModel {
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      id: json['id'],
-      email: json['email'],
-      firstName: json['first_name'],
-      lastName: json['last_name'],
-      avatar: json['avatar'],
+      id: json['id'] is int ? json['id'] : int.tryParse(json['id'].toString()) ?? 0,
+      email: json['email']?.toString() ?? '',
+      firstName: json['first_name']?.toString() ?? '',
+      lastName: json['last_name']?.toString() ?? '',
+      avatar: json['avatar']?.toString() ?? '',
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'email': email,
+      'first_name': firstName,
+      'last_name': lastName,
+      'avatar': avatar,
+    };
+  }
+
+  String get fullName => '$firstName $lastName';
+
+  /// Format NIM mahasiswa Atma Luhur yang ditautkan ke ID Reqres
+  String get simulatedNim => '201150${id.toString().padLeft(2, '0')}';
 }

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "430423205878",
-    "project_id": "pmpl4-d53cf",
-    "storage_bucket": "pmpl4-d53cf.firebasestorage.app"
+    "project_number": "102504037022",
+    "project_id": "absensiprojek",
+    "storage_bucket": "absensiprojek.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:430423205878:android:1966be710ebb5dd75d49d7",
+        "mobilesdk_app_id": "1:102504037022:android:ff78d30b2be61af442598f",
         "android_client_info": {
           "package_name": "com.example.pmp_003"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBKlLiPjSnmFZwkptdfgp-LgTNem3yciug"
+          "current_key": "AIzaSyCsaLHaOH5cau_c87sSKgzRyoYZkCVty7s"
         }
       ],
       "services": {

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '../models/user_model.dart';
 import '../services/api_service.dart';
-
-enum ViewState { initial, loading, loaded, empty, error }
+import 'view_state.dart';
 
 class DataProvider extends ChangeNotifier {
   final ApiService _apiService = ApiService();
 
-  // TODO 1: state + getter
   ViewState _state = ViewState.initial;
   List<UserModel> _users = [];
   String _errorMessage = '';
@@ -17,8 +14,9 @@ class DataProvider extends ChangeNotifier {
   List<UserModel> get users => _users;
   String get errorMessage => _errorMessage;
 
+  /// Memuat daftar pengguna / mahasiswa dari Reqres API (P02 & P03)
+  /// Menggunakan Future dan pola ViewState
   Future<void> loadUsers({String? token}) async {
-    // TODO 2: loading -> fetch -> empty/loaded/error
     _state = ViewState.loading;
     _errorMessage = '';
     notifyListeners();
@@ -36,5 +34,10 @@ class DataProvider extends ChangeNotifier {
       _state = ViewState.error;
     }
     notifyListeners();
+  }
+
+  /// Memuat ulang data API
+  Future<void> refreshUsers() async {
+    await loadUsers();
   }
 }

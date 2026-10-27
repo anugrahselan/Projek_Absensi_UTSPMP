@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-
 import '../models/user_model.dart';
 
 class ApiService {
@@ -13,22 +12,48 @@ class ApiService {
     ),
   );
 
-  // TODO 1 & 2: GET /users dengan Dio + header x-api-key
+  /// Fetch daftar pengguna / mahasiswa dari ReqRes API (P02 & P03)
+  /// Menggunakan Future (Spesifikasi Async P01 & P02)
   Future<List<UserModel>> fetchUsers({String? token}) async {
     try {
       final response = await _dio.get(
         '/users',
-        options: Options(headers: {'x-api-key': _apiKey}),
+        queryParameters: {'per_page': 12},
+        options: Options(
+          headers: {
+            'x-api-key': _apiKey,
+            if (token != null) 'Authorization': 'Bearer $token',
+          },
+        ),
       );
 
-      final List data = response.data['data'];
-      return data.map((json) => UserModel.fromJson(json)).toList();
+      final List data = response.data['data'] as List;
+      return data.map((json) => UserModel.fromJson(json as Map<String, dynamic>)).toList();
     } on DioException catch (e) {
       throw Exception(_friendlyMessage(e));
+    } catch (e) {
+      throw Exception('Terjadi kesalahan tidak terduga: $e');
     }
   }
 
-  // TODO 3: helper error handling
+  /// Fetch detail satu mahasiswa berdasarkan ID
+  Future<UserModel> fetchUserById(int id) async {
+    try {
+      final response = await _dio.get(
+        '/users/$id',
+        options: Options(headers: {'x-api-key': _apiKey}),
+      );
+
+      final data = response.data['data'] as Map<String, dynamic>;
+      return UserModel.fromJson(data);
+    } on DioException catch (e) {
+      throw Exception(_friendlyMessage(e));
+    } catch (e) {
+      throw Exception('Gagal memuat detail mahasiswa: $e');
+    }
+  }
+
+  /// Helper penanganan pesan error Dio yang ramah pengguna (Sesuai Materi P02 & P03)
   String _friendlyMessage(DioException e) {
     final status = e.response?.statusCode;
     final serverError = e.response?.data is Map
@@ -41,21 +66,23 @@ class ApiService {
     }
     if (status == 403) {
       return '403 Forbidden${serverError != null ? ': $serverError' : ''}. '
-          'API key ditolak / limit habis.';
+          'API key ditolak atau batas kuota habis.';
     }
     if (status != null && status >= 500) {
-      return 'Server error ($status). Coba lagi nanti.';
+      return 'Server error ($status). Coba beberapa saat lagi.';
     }
 
     switch (e.type) {
       case DioExceptionType.connectionTimeout:
       case DioExceptionType.sendTimeout:
       case DioExceptionType.receiveTimeout:
-        return 'Timeout: server tidak merespons. Periksa koneksi internet.';
+        return 'Timeout: Server tidak merespons. Periksa koneksi internet Anda.';
       case DioExceptionType.connectionError:
-        return 'Tidak ada koneksi internet / server tidak terjangkau.';
+        return 'Tidak ada koneksi internet / server ReqRes tidak terjangkau.';
+      case DioExceptionType.badResponse:
+        return serverError ?? 'Respons server tidak valid (Kode: $status).';
       default:
-        return serverError ?? e.message ?? 'Gagal mengambil data dari server';
+        return serverError ?? e.message ?? 'Gagal mengambil data dari server ReqRes.';
     }
   }
 }
