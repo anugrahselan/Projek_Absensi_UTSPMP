@@ -1,4 +1,4 @@
-# Jurnal Absensi Mahasiswa
+# Projek_Absensi_UTSPMP — Jurnal Absensi Mahasiswa
 
 > **Proyek Ujian Tengah Semester (UTS) — Pemrograman Multi Platform Lanjutan (IT312)**  
 > **Fakultas Teknologi Informasi — Institut Sains dan Bisnis Atma Luhur Pangkalpinang**  
